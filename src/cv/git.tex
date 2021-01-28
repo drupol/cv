@@ -1,0 +1,17 @@
+\usepackage{xstring}
+\usepackage{catchfile}
+
+\newcommand{\gitfolder}{.git}
+\CatchFileDef{\headfull}{\gitfolder/HEAD}{}
+\StrGobbleRight{\headfull}{1}[\head]
+\StrBehind[2]{\head}{/}[\branch]
+\CatchFileDef{\commit}{\gitfolder/refs/heads/\branch}{}
+\StrGobbleRight{\commit}{1}[\longcommithash]
+
+\newcommand{\gitrevisionlong}{%
+	\longcommithash%
+}
+
+\newcommand{\gitrevisionsmall}{%
+	\StrLeft{\longcommithash}{7}%
+}

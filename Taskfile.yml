@@ -1,0 +1,43 @@
+version: '3'
+
+vars:
+  INPUT: '{{.INPUT | default "src/sample/index.tex"}}'
+  OUTPUT: '`echo $(basename "$(dirname "{{.INPUT}}")")`'
+  DOCKER_COMPOSE: "docker-compose"
+  UP: "{{.DOCKER_COMPOSE}} up"
+  OUTPUT_DIRECTORY: build
+  LATEXMK_ARGS: "-halt-on-error -MP -logfilewarninglist -pdf -shell-escape -interaction=nonstopmode -file-line-error -output-directory={{.OUTPUT_DIRECTORY}}"
+  TEXINPUTS: "/home/src//:"
+  RUN: "{{.DOCKER_COMPOSE}} run -e TEXINPUTS={{.TEXINPUTS}} texlive"
+  LATEXMK_COMMAND: "{{.RUN}} latexmk {{.LATEXMK_ARGS}}"
+
+tasks:
+  default:
+    deps: [fresh]
+
+  build:
+    cmds:
+      - "{{.LATEXMK_COMMAND}} -jobname={{.OUTPUT}} {{.INPUT}}"
+      - task: chmodbuild
+
+  clean:
+    cmds:
+      - "{{.RUN}} rm -rf build"
+
+  chmodbuild:
+    cmds:
+      - "{{.RUN}} chmod 777 build"
+
+  lint:
+    cmds:
+      - "{{.RUN}} chktex {{.INPUT}}"
+      - "{{.RUN}} lacheck {{.INPUT}}"
+      - "{{.RUN}} latexindent -s -w {{.INPUT}}"
+
+  fresh:
+    deps: [clean, build]
+
+  watch:
+    cmds:
+      - "{{.LATEXMK_COMMAND}} -pvc -jobname={{.OUTPUT}} {{.INPUT}}"
+      - task: chmodbuild

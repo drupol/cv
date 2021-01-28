@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+    texlive:
+        image: ghcr.io/xu-cheng/texlive-full
+        volumes:
+            - .:/home
+        working_dir: /home
+        environment:
+            - TEXINPUTS
