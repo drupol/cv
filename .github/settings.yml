@@ -42,4 +42,4 @@ repository:
     has_projects: false
     has_wiki: false
     name: cv
-    private: true
+    private: false
