@@ -35,6 +35,7 @@ repository:
     allow_squash_merge: false
     default_branch: master
     description: "My public CV"
+    homepage: https://github.com/drupol/cv/releases/latest/download/cv.pdf
     topics: cv,latex
     has_downloads: true
     has_issues: true
