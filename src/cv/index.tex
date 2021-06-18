@@ -1,5 +1,5 @@
 % Preamble
-\input{preamble}
+\input{src/cv/preamble}
 
 \begin{document}
 
@@ -51,17 +51,18 @@
     \justify{
     I have been working with web development since 2010, the period during which I have worked in different environments,
 
-    from big consultancy companies to start-ups. I am a self-motivated and self-taught professional who likes to solve problems.
-
-    Curious, meticulous, I appreciate the beauty of simple and efficient things.
+    from big consultancy companies to start-ups. \\\\I am a self-motivated and self-taught professional who likes to solve problems.
+    \\\\Curious, meticulous, I appreciate the beauty of simple and efficient things.
     }
 \end{minipage}
 \hfill % Whitespace between
-\begin{minipage}[t]{0.4\textwidth} % 50% of the page for the skills bar chart
+\begin{minipage}[t]{0.47\textwidth} % 50% of the page for the skills bar chart
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	\begin{barchart}{6}
+	\begin{barchart}{5}
 		\baritem{PHP}{100}
 		\baritem{Linux}{95}
+        \baritem{Object Oriented Programming}{90}
+        \baritem{Functional Programming}{90}
 		\baritem{FreeBSD}{90}
 		\baritem{Git}{85}
 		\baritem{Algorithm}{85}
@@ -85,10 +86,10 @@
         {
 			Hired under the behalf of a consultancy company as a software engineer consultant.
 
-			Working at \href{https://ec.europa.eu/info/departments/informatics_en}{Digit} B.4 (Software Engineering Capabilities),
+			Working at \href{https://ec.europa.eu/info/departments/informatics_en}{Digit} B.4 (\textit{Software Engineering Capabilities}),
 			in charge of building a PHP competency center.
 
-			In that team, I'm responsible for helping people phasing out from ColdFusion to PHP, providing help,
+			In that team, I'm responsible for helping clients migrating from ColdFusion to PHP, providing help,
 			custom bundle and packages, custom assistance and short-terms consultancy missions.
 			\\ \texttt{PHP}\slashsep\texttt{Symfony}\slashsep\texttt{Doctrine}\slashsep\texttt{API Platform}\slashsep\texttt{Oracle}\slashsep\texttt{Docker}
         }
@@ -103,33 +104,49 @@
 			on the NextEuropa and OpenEuropa platforms running respectively Drupal 7 and 8.
 			\\ \texttt{PHP}\slashsep\texttt{Drupal}\slashsep\texttt{MariaDB}\slashsep\texttt{Docker}
         }
-	\entry
-		{10/2012 -- 7/2015\\\footnotesize{full time}}
-		{Software engineer}
-        {European Commission}
-        {
-			Hired under the behalf of a consultancy company as a software engineer consultant.
-
-			Working at \href{https://ec.europa.eu/easme/}{EASME}, an European Commission communication agency.
-
-			My work was mainly to build an intranet platform for the company.
-			\\ \texttt{PHP}\slashsep\texttt{Drupal}\slashsep\texttt{Aegir}\slashsep\texttt{MariaDB}\slashsep\texttt{Docker}
-        }
+    \entry
+        {\color{black!50}Before 6/2015}
+        {}
+        {}
+        {\footnotesize{\color{black!50}This is the public version of the CV and information are streamlined. Please ask me the full CV if needed by sending me an \href{mailto:pol.dellaiera@protonmail.com}{email}.}}
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
-\cvsect{Education}
+\begin{minipage}[t]{.48\textwidth}
+	\cvsect{Education}
 
-\begin{entrylist}
-	\entry
-		{2001 -- 2005\\\footnotesize{Distinction}}
-		{Bachelor's Degree}
-		{Haute Ecoles en Hainaut}
-		{Option: réseau et télécommunication}
-\end{entrylist}
+	\begin{entrylist}
+		\entry
+			{\tiny{2001 -- 2005\\\footnotesize{Distinction}}}
+			{Bachelor's Degree}
+            {\href{https://www.heh.be/}{Haute Ecoles en Hainaut}}
+			{Option: réseau et télécommunication}
+	\end{entrylist}
+
+	\begin{entrylist}
+		\entry
+			{\tiny{2018 -- 2021}}
+			{Music theory}
+            {\href{https://academiedenivelles.be/}{Académie de musique de Nivelles}}
+			{Musical instrument: piano}
+	\end{entrylist}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.48\textwidth}
+	\cvsect{Certificates}
+
+	\begin{entrylist}
+		\entry
+			{01/2020}
+			{Certificate}
+			{The Linux Foundation}
+			{\href{https://courses.edx.org/certificates/01fdb9d9242546e8bc45153468dfd785}{Blockchain: Understanding Its Uses and Implications}}
+	\end{entrylist}
+\end{minipage}
+
 
 %----------------------------------------------------------------------------------------
 %	ADDITIONAL INFORMATION
@@ -151,7 +168,7 @@
 
 	\cvsect{Hobbies}
 
-    Besides my work and the geek stuff, I’m currently fullfilling a childhood dream, I’m learning music and piano!
+    Besides my work and the geek stuff, I’m currently fulfilling a childhood dream, I’m learning music and piano!
     I love photography and I learned by myself most of the secrets of a reflex camera, just for fun.
     I swim a lot and I also really like riding my mountain bike.
 \end{minipage}

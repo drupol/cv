@@ -8,3 +8,8 @@ services:
         working_dir: /home
         environment:
             - TEXINPUTS
+    pandoc:
+        image: pandoc/core
+        volumes:
+            - .:/data
+        working_dir: /data

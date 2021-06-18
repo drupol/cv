@@ -8,8 +8,9 @@ vars:
   OUTPUT_DIRECTORY: build
   LATEXMK_ARGS: "-halt-on-error -MP -logfilewarninglist -pdf -shell-escape -interaction=nonstopmode -file-line-error -output-directory={{.OUTPUT_DIRECTORY}}"
   TEXINPUTS: "/home/src//:"
-  RUN: "{{.DOCKER_COMPOSE}} run -e TEXINPUTS={{.TEXINPUTS}} texlive"
-  LATEXMK_COMMAND: "{{.RUN}} latexmk {{.LATEXMK_ARGS}}"
+  TEXLIVE_RUN: "{{.DOCKER_COMPOSE}} run -e TEXINPUTS={{.TEXINPUTS}} texlive"
+  TEXLIVE_PANDOC: "{{.DOCKER_COMPOSE}} run pandoc"
+  LATEXMK_COMMAND: "{{.TEXLIVE_RUN}} latexmk {{.LATEXMK_ARGS}}"
 
 tasks:
   default:
@@ -22,17 +23,17 @@ tasks:
 
   clean:
     cmds:
-      - "{{.RUN}} rm -rf build"
+      - "{{.TEXLIVE_RUN}} rm -rf build"
 
   chmodbuild:
     cmds:
-      - "{{.RUN}} chmod 777 build"
+      - "{{.TEXLIVE_RUN}} chmod 777 build"
 
   lint:
     cmds:
-      - "{{.RUN}} chktex {{.INPUT}}"
-      - "{{.RUN}} lacheck {{.INPUT}}"
-      - "{{.RUN}} latexindent -s -w {{.INPUT}}"
+      - "{{.TEXLIVE_RUN}} chktex {{.INPUT}}"
+      - "{{.TEXLIVE_RUN}} lacheck {{.INPUT}}"
+      - "{{.TEXLIVE_RUN}} latexindent -s -w {{.INPUT}}"
 
   fresh:
     deps: [clean, build]
