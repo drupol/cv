@@ -1,4 +1,4 @@
-INPUT ?= src/sample/index.tex
+INPUT ?= src/cv/index.tex
 OUTPUT ?= $(shell basename "$(shell dirname "$(INPUT)")")
 DOCKER_COMPOSE = docker-compose
 UP = ${DOCKER_COMPOSE} up
@@ -14,7 +14,7 @@ rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
 .PHONY: build view
 
-all : build
+cv : build
 
 %:
 	$(MAKE) build INPUT=src/$@/index.tex
