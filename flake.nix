@@ -5,7 +5,7 @@
     flake-utils.url = github:numtide/flake-utils;
   };
   outputs = { self, nixpkgs, flake-utils }:
-    with flake-utils.lib; eachSystem allSystems (system:
+    with flake-utils.lib; eachDefaultSystem (system:
     let
       pkgs = nixpkgs.legacyPackages.${system};
       tex = pkgs.texlive.combine {
