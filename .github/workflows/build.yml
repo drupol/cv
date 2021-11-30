@@ -76,8 +76,8 @@ jobs:
         with:
           tag_name: v${{ github.run_number }}-${{ needs.dependencies.outputs.version }}
           release_name: Version ${{ github.run_number }} (${{ needs.dependencies.outputs.version }})
-          draft: false
-          prerelease: false
+          draft: true
+          prerelease: true
 
   assets:
     name: Upload release assets
