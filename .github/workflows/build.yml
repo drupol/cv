@@ -90,7 +90,7 @@ jobs:
 
     steps:
       - name: Download build assets (${{ matrix.assets.input }})
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ matrix.assets.input }}
           path: ${{ matrix.assets.input }}
