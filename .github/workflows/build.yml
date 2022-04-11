@@ -56,7 +56,7 @@ jobs:
         run: nix develop --command make
 
       - name: Upload build assets (${{ matrix.sources.input }})
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.sources.output }}
           path: build/${{ matrix.sources.output }}.pdf
