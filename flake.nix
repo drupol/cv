@@ -31,6 +31,12 @@
           name = documentProperties.name + "-" + version;
           src = self;
           buildInputs = documentProperties.inputs;
+          configurePhase = ''
+            runHook preConfigure
+            substituteInPlace "src/cv/version.tex" \
+              --replace "dev" "${version}"
+            runHook postConfigure
+          '';
           installPhase = ''
             runHook preInstall
             cp build/cv.pdf $out
