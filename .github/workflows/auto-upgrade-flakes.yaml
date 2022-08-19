@@ -1,0 +1,9 @@
+name: 'Auto update flake lock file'
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  AutoUpdateFlakeLock:
+    uses: loophp/flake-lock-update-workflow/.github/workflows/auto-upgrade-flakes.yaml@main
