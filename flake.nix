@@ -46,10 +46,10 @@
       in
       rec {
         # Nix shell / nix build
-        defaultPackage = documentDrv;
+        packages.default = documentDrv;
 
         # Nix develop
-        devShell = pkgs.mkShellNoCC {
+        devShells.default = pkgs.mkShellNoCC {
           name = documentProperties.name;
           buildInputs = documentProperties.inputs;
         };
