@@ -1,57 +1,50 @@
 {
-  description = "LaTeX Document";
-
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-unstable;
-    flake-utils.url = github:numtide/flake-utils;
-    flake-utils.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    systems.url = "github:nix-systems/default";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    with flake-utils.lib; eachSystem allSystems (system:
-      let
-        version = self.shortRev or self.lastModifiedDate;
+  outputs =
+    inputs@{ self, flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
 
-        pkgs = nixpkgs.legacyPackages.${system};
+      perSystem =
+        { pkgs, config, ... }:
+        let
+          tex = pkgs.texlive.combine { inherit (pkgs.texlive) scheme-full latex-bin latexmk; };
+        in
+        {
+          devShells.default = pkgs.mkShellNoCC {
+            packages = [
+              pkgs.coreutils
+              tex
+              pkgs.gnumake
+            ];
+          };
 
-        tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-full latex-bin latexmk;
+          packages.default = pkgs.stdenvNoCC.mkDerivation {
+            pname = "cv-short";
+            version = self.shortRev or self.lastModifiedDate;
+            src = self;
+            buildInputs = [
+              pkgs.coreutils
+              tex
+              pkgs.gnumake
+            ];
+            configurePhase = ''
+              runHook preConfigure
+              substituteInPlace "src/cv/version.tex" \
+                --replace "dev" "${config.packages.default.version}"
+              runHook postConfigure
+            '';
+            installPhase = ''
+              runHook preInstall
+              cp build/cv.pdf $out
+              runHook postInstall
+            '';
+          };
         };
-
-        documentProperties = {
-          name = "cv";
-          inputs = [
-            pkgs.coreutils
-            tex
-            pkgs.gnumake
-          ];
-        };
-
-        documentDrv = pkgs.stdenvNoCC.mkDerivation {
-          name = documentProperties.name + "-" + version;
-          src = self;
-          buildInputs = documentProperties.inputs;
-          configurePhase = ''
-            runHook preConfigure
-            substituteInPlace "src/cv/version.tex" \
-              --replace "dev" "${version}"
-            runHook postConfigure
-          '';
-          installPhase = ''
-            runHook preInstall
-            cp build/cv.pdf $out
-            runHook postInstall
-          '';
-        };
-      in
-      rec {
-        # Nix shell / nix build
-        packages.default = documentDrv;
-
-        # Nix develop
-        devShells.default = pkgs.mkShellNoCC {
-          name = documentProperties.name;
-          buildInputs = documentProperties.inputs;
-        };
-      });
+    };
 }
