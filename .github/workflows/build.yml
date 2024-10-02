@@ -73,4 +73,4 @@ jobs:
           draft: false
           prerelease: true
           files: |
-            ./*.pdf
+            ./assets/*.pdf
