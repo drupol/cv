@@ -42,14 +42,15 @@ jobs:
 
       - name: Build document
         run: |
-          nix build . --quiet
-          cp result cv.pdf
+          mkdir -p output
+          nix build . --out-link result-cv --quiet
+          cp -vr --dereference $(readlink -f result-cv) output
 
       - name: Upload build assets
         uses: actions/upload-artifact@v4
         with:
           name: assets
-          path: cv.pdf
+          path: output
 
   release:
     name: "Create tag/pre-release"

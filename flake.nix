@@ -36,12 +36,13 @@
             configurePhase = ''
               runHook preConfigure
               substituteInPlace "src/cv/version.tex" \
-                --replace "dev" "${config.packages.default.version}"
+                --replace-fail "dev" "${config.packages.default.version}"
               runHook postConfigure
             '';
             installPhase = ''
               runHook preInstall
-              cp build/cv.pdf $out
+              mkdir -p $out
+              cp build/cv.pdf $out/
               runHook postInstall
             '';
           };
