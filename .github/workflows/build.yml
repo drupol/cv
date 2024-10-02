@@ -44,7 +44,7 @@ jobs:
         run: |
           mkdir -p output
           nix build . --out-link result-cv --quiet
-          cp -vr --dereference $(readlink -f result-thesis) cv
+          cp -vr --dereference $(readlink -f result-cv) cv
           cp -ar cv/* output/
 
       - name: Upload build assets
