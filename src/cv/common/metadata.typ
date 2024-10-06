@@ -1,17 +1,5 @@
 // Enter your thesis data here:
-#let title = "Reproducibility in Software Engineering"
 #let subtitle = "Research, analysis, development"
-#let doi = "10.5281/zenodo.12666898"
-#let university = "University of Mons"
-#let faculty = "Faculty of Sciences"
-#let degree = "Master"
-#let program = "Computer Science"
-#let view = degree + "'s Thesis in " + program
-#let advisors = none
-#let author = "Pol Dellaiera"
-#let authorOrcId = "0009-0008-7972-7160"
-#let startDate = "2023 - 2024"
-#let submissionDate = "12 June 2024"
 #let body-font = "Roboto"
 #let sans-font = "New Computer Modern Sans"
 #let page-margin = (left: 5mm, right: 5mm, top: 5mm, bottom: 5mm,)

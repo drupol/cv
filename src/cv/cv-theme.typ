@@ -13,7 +13,16 @@
     numbering: "1",
     number-align: center,
     paper: "a4",
-    footer: ""
+    footer: [
+        #{
+            set text(size: font-defaults.tiny, fill: black.lighten(75%))
+            [
+                #link("https://github.com/drupol/cv/commit/" + shortRev)[
+                    Build date: #builddate - Revision: #shortRev
+                ]
+            ]
+        }
+    ],
   )
 
   // --- Typography ---
@@ -146,7 +155,7 @@
         #{
           set text(size: font-defaults.footnotesize, fill: black.lighten(75%))
           [This is the public and short version of my CV. Please ask for the full
-            version by sending me an email.]
+            version by sending me an #link("mailto:pol.dellaiera@protonmail.com")[email].]
         }
       ]
     ]

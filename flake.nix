@@ -38,10 +38,6 @@
             paths = with pkgs; [
               font-awesome
               roboto
-              inriafonts
-              fg-virgil
-              liberation_ttf
-              inconsolata-nerdfont
               newcomputermodern
             ];
           };
