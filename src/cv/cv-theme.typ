@@ -86,7 +86,7 @@
         solutions that harmoniously balance aesthetics and functionality.
       ][
         #box(inset: (left: 2em))[
-          #featureBar(title: "Linux/NixOS", value: 97%)
+          #featureBar(title: "Linux/NixOS/FreeBSD", value: 95%)
           #featureBar(title: "Object Oriented Programming", value: 90%)
           #featureBar(title: "PHP/Python", value: 87%)
           #featureBar(title: "Functional Programming", value: 85%)
@@ -109,6 +109,8 @@
         tags: (
           link("https://en.wikipedia.org/wiki/Python_(programming_language)")[Python],
           link("https://en.wikipedia.org/wiki/MongoDB")[MongoDB],
+          link("https://platform.openai.com")[OpenAI API],
+          link("https://en.wikipedia.org/wiki/Large_language_model")[LLM],
           link("https://en.wikipedia.org/wiki/Nix_(package_manager)")[Nix],
           link("https://en.wikipedia.org/wiki/Git")[Git],
           link("https://github.com/martinvonz/jj")[Jujutsu],
@@ -177,7 +179,7 @@
 
         #educationEntry(
           title: "BSc Computer Science",
-          school: [#link("https://www.heh.be")[Haute Ecoles en Hainaut]],
+          school: [#link("https://www.heh.be")[Haute École en Hainaut]],
           type: "Full time",
           grade: [Cum Laude],
           date: "2001 -- 2005",
@@ -187,13 +189,19 @@
 
         #educationEntry(
           title: "Music theory / Piano",
-          school: [#link("https://academiedenivelles.be")[Académie de musique de Nivelles]],
+          school: [#link("https://academiedenivelles.be")[Académie de Nivelles]],
           type: "Full time",
           date: "2018 -- 2021",
         )[]
       ]
     ][
       #customBox(title: [Certificates])[
+        #educationEntry(
+          title: "Intelligence Artificielle (Hands on AI)",
+          school: [#link("https://web.umons.ac.be/fpms/fr/formations/cu-inarti/")[University of Mons]],
+          date: "09/2024",
+        )[]
+
         #educationEntry(
           title: "Blockchain: Understanding Its Uses and Implications",
           school: [#link("https://courses.edx.org/certificates/01fdb9d9242546e8bc45153468dfd785")[The Linux Foundation]],
@@ -229,9 +237,9 @@
       ]
     ][
       #customBox(title: [Hobbies])[
-        Besides my work and the geek stuff, I’m currently fulfilling a childhood dream, I’m learning music and piano!
+        I am fulfilling a childhood dream, I study music and teach myself piano.
         I love photography and I learned by myself most of the secrets of a reflex camera, just for fun.
-        I swim a lot and I also really like riding my mountain bike.
+        I swim a lot and I also really like riding my mountain bike. Another hobby of mine is refurbishing old computers, giving them a second life and use them for making experiments in my basement.
       ]
     ][
       #customBox(title: [Non Profit])[

@@ -4,7 +4,7 @@
 #let languageItem(
   lang: "",
   level: "",
-  comment: ""
+  comment: "",
 ) = {
   block(
     grid(
@@ -22,29 +22,31 @@
 }
 
 #let educationEntry(
-  title: "",
-  school: "",
-  date: "",
-  type: "",
-  grade: "",
+  title: none,
+  school: none,
+  date: none,
+  type: none,
+  grade: none,
   body,
 ) = {
   set text(size: font-defaults.footnotesize)
   block(
     grid(
       columns: (1fr, 4fr),
-      align: (left, left),
-    )[
-      #date\
-      #text(fill: black.lighten(70%))[#grade]
-    ][
-      #grid(
+      row-gutter: .5em,
+      date,
+      grid(
         columns: (1fr, 1fr),
         align: (left, right),
-        text(weight: "bold", title), school,
-      )
-      #body
-    ],
+        text(weight: "bold", title), text(fill: black.lighten(65%))[#school],
+      ),
+      ..if grade != none {
+        (text(fill: black.lighten(70%))[#grade],)
+      },
+      ..if body != [] {
+        (body,)
+      },
+    ),
   )
 }
 
@@ -76,7 +78,7 @@
       #body
       #{
         set text(font: "New Computer Modern Mono", fill: black.lighten(60%))
-        grid(columns: (1fr), tags.join(" / "))
+        grid(columns: 1fr, tags.join(" / "))
       }
     ],
   )
@@ -127,7 +129,8 @@
         columns: (1fr, 1fr),
         column-gutter: 1em,
         align: horizon,
-        align(right)[#title], line(stroke: .75em + black, length: value),
+        align(right)[#title],
+        line(stroke: .75em + blue.darken(30%), length: value),
       )
     ]
   }
