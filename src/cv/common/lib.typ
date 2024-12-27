@@ -12,11 +12,11 @@
       align: (left, right),
     )[
       #text(weight: "bold", lang)
-      #box(width: 1fr, repeat[.])
+      #text(fill: black.lighten(75%), box(width: 1fr, repeat[.]))
     ][
-      #box(width: 1fr, repeat[.])
-      #text(fill: black.lighten(70%))[#level]
-      #text(fill: black.lighten(70%))[#comment]
+      #text(fill: black.lighten(75%), box(width: 1fr, repeat[.]))
+      #text(fill: black.lighten(0%))[#level]
+      #text(fill: black.lighten(0%))[#comment]
     ],
   )
 }
@@ -39,7 +39,8 @@
         date
       },
       grid(
-        columns: (1fr, 1fr),
+        columns: (1fr, auto),
+        column-gutter: 1em,
         align: (left, right),
         text(weight: "bold", title), text(fill: black.lighten(65%))[#school],
       ),
@@ -76,9 +77,9 @@
             align: (left, right),
           )[
             #text(weight: "bold", title)
-            #text(fill: black.lighten(90%), box(width: 1fr, repeat[.]))
+            #text(fill: black.lighten(75%), box(width: 1fr, repeat[.]))
           ][
-            #text(fill: black.lighten(90%), box(width: 1fr, repeat[.]))
+            #text(fill: black.lighten(75%), box(width: 1fr, repeat[.]))
             #text(fill: black.lighten(70%))[#company]
           ],
         )
