@@ -36,6 +36,9 @@
           fontsConf = pkgs.symlinkJoin {
             name = "typst-fonts";
             paths = with pkgs; [
+              font-awesome
+              roboto
+              newcomputermodern
             ];
           };
 
@@ -53,7 +56,7 @@
               buildPhase = ''
                 runHook preBuild
 
-                ${lib.getExe typst} fonts --ignore-system-fonts --font-path ${fontsConf}
+                ${lib.getExe typst} fonts --variants --ignore-system-fonts --font-path ${fontsConf}
 
                 ${lib.getExe typst} \
                   compile \
