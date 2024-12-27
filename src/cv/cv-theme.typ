@@ -69,7 +69,7 @@
         ][
           #linkItem(
             icon: "envelope",
-          )[#link("mailto:pol.dellaiera@protonmail.com")[pol.dellaiera\@protonmail]]
+          )[#link("mailto:pol.dellaiera@protonmail.com")[pol.dellaiera\@protonmail.com]]
         ][
           #linkItem(
             icon: "globe",
