@@ -11,7 +11,7 @@
   set text(
     font: body-font,
     size: font.normal,
-    weight: 400,
+    stretch: 75%,
     lang: "en",
     hyphenate: true,
   )
@@ -104,15 +104,14 @@
         solutions that harmoniously balance aesthetics and functionality.
       ][
         #box()[
-          #featureBar(title: "Linux/NixOS/FreeBSD", value: 95%)
+          #featureBar(title: "Linux / NixOS / FreeBSD", value: 95%)
           #featureBar(title: "Object Oriented Programming", value: 90%)
-          #featureBar(title: "PHP/Python", value: 87%)
+          #featureBar(title: "PHP / Python", value: 87%)
           #featureBar(title: "Functional Programming", value: 85%)
-          #featureBar(title: "Git/Jujutsu", value: 85%)
+          #featureBar(title: "Git / Jujutsu", value: 85%)
           #featureBar(title: "Algorithm", value: 85%)
           #featureBar(title: "Docker", value: 75%)
-          #featureBar(title: "Typst", value: 70%)
-          #featureBar(title: "LaTeX", value: 65%)
+          #featureBar(title: [Typst / #LaTeX], value: 70%)
         ]
       ]
     ]
