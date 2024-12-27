@@ -11,6 +11,7 @@
   set text(
     font: body-font,
     size: font.normal,
+    weight: 400,
     lang: "en",
     hyphenate: true,
   )
