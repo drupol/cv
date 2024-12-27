@@ -68,7 +68,7 @@
         ][
           #linkItem(
             icon: "envelope",
-          )[#link("mailto:pol.dellaiera@protonmail.com")[pol.dellaiera\@protonmail.com]]
+          )[#link("mailto:pol.dellaiera@protonmail.com")[pol.dellaiera\@protonmail]]
         ][
           #linkItem(
             icon: "globe",
@@ -87,7 +87,8 @@
 
     customBox(title: [About])[
       #grid(
-        columns: (auto, auto)
+        columns: (5fr, 4fr),
+        column-gutter: 1em,
       )[
         Since beginning my web development journey in 2010, I have acquired a wealth
         of experience across diverse environments, including innovative start-ups
