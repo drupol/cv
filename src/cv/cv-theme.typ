@@ -7,6 +7,23 @@
   lastname: "",
   body,
 ) = {
+  // --- Typography ---
+  set text(
+    font: body-font,
+    size: font.normal,
+    lang: "en",
+    hyphenate: true,
+  )
+
+  // --- Paragraphs ---
+  // Source: https://typst.app/docs/guides/guide-for-latex-users/
+  set par(justify: true, spacing: .75em)
+
+  // --- Links ---
+  show link: it => {
+    underline(it, stroke: .2pt + rgb("#000000").lighten(65%))
+  }
+
   // --- Page configuration ---
   set page(
     margin: page-margin,
@@ -24,23 +41,6 @@
       }
     ],
   )
-
-  // --- Typography ---
-  set text(
-    font: body-font,
-    size: font.normal,
-    lang: "en",
-    hyphenate: true,
-  )
-
-  // --- Paragraphs ---
-  // Source: https://typst.app/docs/guides/guide-for-latex-users/
-  set par(justify: true, spacing: .75em)
-
-  // --- Links ---
-  show link: it => {
-    underline(it, stroke: .2pt + rgb("#000000").lighten(65%))
-  }
 
   {
     grid(
