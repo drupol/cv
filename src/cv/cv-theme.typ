@@ -43,7 +43,7 @@
   }
 
   {
-    table(
+    grid(
       columns: (2fr, 4fr),
       align: (left, right),
     )[
