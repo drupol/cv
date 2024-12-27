@@ -43,16 +43,20 @@
   }
 
   {
-    grid(
-      columns: (1fr, 3fr),
+    table(
+      columns: (2fr, 4fr),
       align: (left, right),
     )[
       #text(size: 3em, weight: "bold")[#firstname]\
       #text(size: 3em, weight: "bold")[#lastname]\
-      #text(size: 1.12em)[#subtitle]\
+      #text(size: 1.2em)[#subtitle]\
     ][
       #{
-        grid(columns: 3, rows: 2, column-gutter: 1em, row-gutter: .5em, align: left)[
+        grid(
+          columns: (1fr, 1fr, 1fr),
+          row-gutter: 2em,
+          align: left
+        )[
           #linkItem(
             icon: "map-pin",
           )[#link("https://www.openstreetmap.org//#map=15/50.59690/4.32280")[Nivelles, Belgium]]
