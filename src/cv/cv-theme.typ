@@ -33,6 +33,7 @@
     paper: "a4",
     footer: [
       #{
+        set align(right)
         set text(size: font-defaults.tiny, fill: black.lighten(75%))
         [
           #link("https://github.com/drupol/cv/commit/" + shortRev)[
@@ -91,28 +92,34 @@
         columns: (5fr, 4fr),
         column-gutter: 1em,
       )[
-        Since beginning my web development journey in 2010, I have acquired a wealth
-        of experience across diverse environments, including innovative start-ups
-        and established consultancies.
-        A highly motivated, self-taught professional, I am passionate about solving
-        intricate problems by implementing elegant, streamlined solutions.
+        Since beginning my web development journey in 2010, I have acquired a
+        wealth of experience across diverse environments, including innovative
+        start-ups and established consultancies.
+        A highly motivated professional, I am passionate about solving intricate
+        problems by implementing elegant, streamlined and long-term reliable
+        solutions. I often take inspiration from cutting-edge software
+        engineering research, continually seeking ways to adapt these insights
+        to real-world applications.
 
         My insatiable curiosity and meticulous nature have made me a perpetual
-        learner, constantly striving to expand my knowledge.
+        learner, constantly striving to expand my skillset where innovation is
+        key in this ever-evolving field.
 
-        I take great satisfaction in creating simple, natural, and efficient
-        solutions that harmoniously balance aesthetics and functionality.
+        Above all, I derive great satisfaction in creating simple, natural, and
+        efficient solutions that harmoniously balance aesthetics and
+        functionality.
       ][
-        #box()[
-          #featureBar(title: "Linux / NixOS / FreeBSD", value: 95%)
-          #featureBar(title: "Object Oriented Programming", value: 90%)
-          #featureBar(title: "PHP / Python", value: 87%)
-          #featureBar(title: "Functional Programming", value: 85%)
-          #featureBar(title: "Git / Jujutsu", value: 85%)
-          #featureBar(title: "Algorithm", value: 85%)
-          #featureBar(title: "Docker", value: 75%)
-          #featureBar(title: [Typst / #LaTeX], value: 70%)
-        ]
+        #featureBar(title: "Linux / NixOS / FreeBSD", value: 95%)
+        #featureBar(title: "Object Oriented Programming", value: 90%)
+        #featureBar(title: "Continuous Integrations", value: 90%)
+        #featureBar(title: "Infrastructure As Code", value: 90%)
+        #featureBar(title: "PHP / Python", value: 87%)
+        #featureBar(title: "Functional Programming", value: 85%)
+        #featureBar(title: "Git / Jujutsu", value: 85%)
+        #featureBar(title: "Algorithm", value: 85%)
+        #featureBar(title: "Docker", value: 75%)
+        #featureBar(title: [Typst / #LaTeX], value: 70%)
+        #featureBar(title: [Word / Excel / Powerpoint], value: 5%)
       ]
     ]
 
