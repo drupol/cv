@@ -14,14 +14,14 @@
     number-align: center,
     paper: "a4",
     footer: [
-        #{
-            set text(size: font-defaults.tiny, fill: black.lighten(75%))
-            [
-                #link("https://github.com/drupol/cv/commit/" + shortRev)[
-                    Build date: #builddate - Revision: #shortRev
-                ]
-            ]
-        }
+      #{
+        set text(size: font-defaults.tiny, fill: black.lighten(75%))
+        [
+          #link("https://github.com/drupol/cv/commit/" + shortRev)[
+            Build date: #builddate - Revision: #shortRev
+          ]
+        ]
+      }
     ],
   )
 
@@ -54,17 +54,29 @@
     ][
       #{
         grid(columns: 3, rows: 2, column-gutter: 1em, row-gutter: .5em, align: left)[
-          #linkItem(icon: "map-pin")[#link("https://www.openstreetmap.org//#map=15/50.59690/4.32280")[Nivelles, Belgium]]
+          #linkItem(
+            icon: "map-pin",
+          )[#link("https://www.openstreetmap.org//#map=15/50.59690/4.32280")[Nivelles, Belgium]]
         ][
-          #linkItem(icon: "github")[#link("https://github.com/drupol")[github.com/drupol]]
+          #linkItem(
+            icon: "github",
+          )[#link("https://github.com/drupol")[github.com/drupol]]
         ][
-          #linkItem(icon: "envelope")[#link("mailto:pol.dellaiera@protonmail.com")[pol.dellaiera\@protonmail.com]]
+          #linkItem(
+            icon: "envelope",
+          )[#link("mailto:pol.dellaiera@protonmail.com")[pol.dellaiera\@protonmail.com]]
         ][
-          #linkItem(icon: "globe")[#link("https://not-a-number.io")[not-a-number.io]]
+          #linkItem(
+            icon: "globe",
+          )[#link("https://not-a-number.io")[not-a-number.io]]
         ][
-          #linkItem(icon: "github")[#link("https://github.com/loophp")[github.com/loophp]]
+          #linkItem(
+            icon: "github",
+          )[#link("https://github.com/loophp")[github.com/loophp]]
         ][
-          #linkItem(icon: "mastodon")[#link("https://mathstodon.xyz/@Pol")[\@pol\@mathstodon.xyz]]
+          #linkItem(
+            icon: "mastodon",
+          )[#link("https://mathstodon.xyz/@Pol")[\@pol\@mathstodon.xyz]]
         ]
       }
     ]
@@ -105,7 +117,7 @@
         company: [#link("https://ec.europa.eu")[European Commission]],
         location: "Bruxelles",
         type: "Full time",
-        date: "6/2024 -- present",
+        date: "06/2024 — present",
         tags: (
           link("https://en.wikipedia.org/wiki/Python_(programming_language)")[Python],
           link("https://en.wikipedia.org/wiki/MongoDB")[MongoDB],
@@ -121,7 +133,7 @@
         #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.4] (#emph[Software Engineering Capabilities]).
         In this role, I am part of a team of developers, responsible for
         developing #emph[GPT\@EC], an internal AI chatbot application based on
-        GPT technology. My primary focus is on designing and building a
+        GPT technology, using open-source software. My primary focus is on designing and building a
         scalable, robust solution, ensuring optimal performance, security, and
         integration within the European Commission's ecosystem.
       ]
@@ -131,7 +143,7 @@
         company: [#link("https://ec.europa.eu")[European Commission]],
         location: "Bruxelles",
         type: "Full time",
-        date: "7/2019 -- 6/2024",
+        date: "07/2019 — 06/2024",
         tags: (
           link("https://en.wikipedia.org/wiki/Nix_(package_manager)")[Nix],
           link("https://symfony.com/")[Symfony],
@@ -145,15 +157,17 @@
         Hired on behalf of a consultancy company, working at
         #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.4] (#emph[Software Engineering Capabilities]),
         where I work in the Developer's Journey team. In this role, I guide teams and clients
-        through the migration process from ColdFusion to PHP. Additionally, I design and implement authentication libraries
+        through the migration process from ColdFusion to PHP. Additionally, I design and implement open-source authentication libraries
         solutions and the necessary development infrastructure for multiple teams, with
         a focus on creating reproducible and ephemeral development environments based on Nix.
       ]
 
-      #jobEntry(date: [#text(
-          size: font-defaults.footnotesize,
-          fill: black.lighten(75%),
-        )[Before 2019]])[
+      #jobEntry(
+        type: [#text(
+            size: font-defaults.footnotesize,
+            fill: black.lighten(75%),
+          )[Before 2019]],
+      )[
         #{
           set text(size: font-defaults.footnotesize, fill: black.lighten(75%))
           [This is the public and short version of my CV. Please ask for the full
@@ -172,7 +186,7 @@
           school: [#link("https://web.umons.ac.be")[University of Mons]],
           type: "Full time",
           grade: [Cum Laude],
-          date: "2021 -- 2024",
+          date: "2021 — 2024",
         )[
           Thesis: #link("https://doi.org/10.5281/zenodo.12666898")["Reproducibility in Software Engineering"]
         ]
@@ -182,7 +196,7 @@
           school: [#link("https://www.heh.be")[Haute École en Hainaut]],
           type: "Full time",
           grade: [Cum Laude],
-          date: "2001 -- 2005",
+          date: "2001 — 2005",
         )[
           IT and systems, specialisation in network and telecommunications
         ]
@@ -191,7 +205,7 @@
           title: "Music theory / Piano",
           school: [#link("https://academiedenivelles.be")[Académie de Nivelles]],
           type: "Full time",
-          date: "2018 -- 2021",
+          date: "2018 — 2021",
         )[]
       ]
     ][
@@ -254,6 +268,5 @@
       - Only when the last tree has died and the last river been poisoned and the last fish been caught will we realize we cannot eat money. - Indian author
       - We may regard the present state of the universe as the effect of its past and the cause of its future. An intellect which at a certain moment would know all forces that set nature in motion, and all positions of all items of which nature is composed, if this intellect were also vast enough to submit these data to analysis, it would embrace in a single formula the movements of the greatest bodies of the universe and those of the tiniest atom; for such an intellect nothing would be uncertain and the future just like the past would be present before its eyes. - Pierre Simon Laplace
     ]
-
   }
 }

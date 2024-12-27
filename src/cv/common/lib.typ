@@ -32,9 +32,12 @@
   set text(size: font-defaults.footnotesize)
   block(
     grid(
-      columns: (1fr, 4fr),
+      columns: (auto, auto),
+      column-gutter: 1em,
       row-gutter: .5em,
-      date,
+      {
+        date
+      },
       grid(
         columns: (1fr, 1fr),
         align: (left, right),
@@ -51,36 +54,50 @@
 }
 
 #let jobEntry(
-  title: "",
-  company: "",
-  location: "",
-  date: "",
-  type: "",
+  title: none,
+  company: none,
+  location: none,
+  date: none,
+  type: none,
   tags: (),
   body,
 ) = {
-  block(
-    grid(
-      columns: (1fr, 5fr),
-      align: (left, left),
-    )[
-      #date\
-      #text(fill: black.lighten(70%))[#type]\
-      #text(fill: black.lighten(70%))[#location]
-    ][
-      #if title != "" and company != "" {
-        grid(
-          columns: (1fr, 1fr),
-          align: (left, right),
-          text(weight: "bold", title), company,
+  grid(
+    columns: (auto, 1fr),
+    row-gutter: 0.5em,
+    column-gutter: 1em,
+    align: (left, left),
+    ..(
+      ..if date != none { (date,) },
+      ..if title != none and company != none {
+        (
+          grid(
+            columns: (1fr, 1fr),
+            align: (left, right),
+          )[
+            #text(weight: "bold", title)
+            #text(fill: black.lighten(90%), box(width: 1fr, repeat[.]))
+          ][
+            #text(fill: black.lighten(90%), box(width: 1fr, repeat[.]))
+            #text(fill: black.lighten(70%))[#company]
+          ],
         )
-      }
-      #body
-      #{
-        set text(font: "New Computer Modern Mono", fill: black.lighten(60%))
-        grid(columns: 1fr, tags.join(" / "))
-      }
-    ],
+      },
+      {
+        set text(fill: black.lighten(70%))
+        grid(
+          row-gutter: .5em,
+          type, location
+        )
+      },
+      {
+        body
+        {
+          set text(font: "New Computer Modern Mono", fill: black.lighten(60%))
+          grid(columns: 1fr, tags.join(" / "))
+        }
+      },
+    )
   )
 }
 
@@ -105,18 +122,16 @@
   body,
   title: "",
 ) = {
-  block(
-    grid(rows: 2)[
-      #{
-        block(fill: black, inset: .3em)[
-          #text(fill: white, size: font.large)[#upper(title)]
-        ]
-      }
-    ][
-      #v(.5em)
-      #body
-    ],
-  )
+  grid(rows: 2, row-gutter: 0em)[
+    #{
+      block(fill: black, inset: .3em)[
+        #text(fill: white, size: font.large)[#upper(title)]
+      ]
+    }
+  ][
+    #v(.35em)
+    #body
+  ]
 }
 
 #let featureBar(
