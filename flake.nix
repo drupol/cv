@@ -49,8 +49,14 @@
 
               src = pkgs.lib.cleanSource ./.;
 
+              nativeBuildInputs = [
+                typst
+              ];
+
               buildPhase = ''
                 runHook preBuild
+
+                ${lib.getExe typst} fonts --ignore-system-fonts --font-path ${fontsConf}
 
                 ${lib.getExe typst} \
                   compile \
@@ -84,6 +90,8 @@
               runtimeInputs = [ typst ];
 
               text = ''
+                ${lib.getExe typst} fonts --ignore-system-fonts --font-path ${fontsConf}
+
                 ${lib.getExe typst} \
                   compile \
                   --root ./. \

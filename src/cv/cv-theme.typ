@@ -1,4 +1,4 @@
-#import "@preview/fontawesome:0.4.0": *
+#import "@preview/fontawesome:0.5.0": *
 #import "common/metadata.typ": *
 #import "common/lib.typ": *
 
@@ -35,8 +35,7 @@
 
   // --- Paragraphs ---
   // Source: https://typst.app/docs/guides/guide-for-latex-users/
-  set par(justify: true)
-  show par: set block(spacing: .75em)
+  set par(justify: true, spacing: .75em)
 
   // --- Links ---
   show link: it => {
