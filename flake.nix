@@ -36,9 +36,6 @@
           fontsConf = pkgs.symlinkJoin {
             name = "typst-fonts";
             paths = with pkgs; [
-              font-awesome
-              roboto
-              newcomputermodern
             ];
           };
 
