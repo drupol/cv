@@ -28,9 +28,9 @@
   // --- Typography ---
   set text(
     font: body-font,
-    size: font.normal,
+    size: font.small,
     lang: "en",
-    hyphenate: false,
+    hyphenate: true,
   )
 
   // --- Paragraphs ---
