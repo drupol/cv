@@ -46,7 +46,7 @@ jobs:
             - name: Build document
               run: |
                   mkdir -p output
-                  nix build .#cv --out-link result-cv --quiet
+                  nix build .#cv --out-link result-cv
                   cp -vr --dereference $(readlink -f result-cv) cv
                   cp -ar cv/* output/
 
