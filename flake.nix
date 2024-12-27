@@ -33,11 +33,17 @@
           # Change here to typst-dev if needed
           typst = pkgs.nixpkgs-unstable.typst;
 
+          robotoCondensed = pkgs.roboto.overrideAttrs (finalAttrs: {
+            postInstall = finalAttrs.postInstall or "" + ''
+              rm -rf $out/share/fonts/truetype/Roboto-*
+              '';
+          });
+
           fontsConf = pkgs.symlinkJoin {
             name = "typst-fonts";
             paths = with pkgs; [
               font-awesome
-              roboto
+              robotoCondensed
               newcomputermodern
             ];
           };
