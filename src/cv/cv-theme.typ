@@ -18,7 +18,7 @@
         set text(size: font-defaults.tiny, fill: black.lighten(75%))
         [
           #link("https://github.com/drupol/cv/commit/" + shortRev)[
-            Build date: #builddate - Revision: #shortRev
+            Build date: #builddate - Revision: #shortRev - This is the public and short version of my CV. Please ask for the full version by sending me an #link("mailto:pol.dellaiera@protonmail.com")[email].
           ]
         ]
       }
@@ -28,7 +28,7 @@
   // --- Typography ---
   set text(
     font: body-font,
-    size: font.small,
+    size: font.normal,
     lang: "en",
     hyphenate: true,
   )
@@ -44,7 +44,8 @@
 
   {
     grid(
-      columns: (2fr, 4fr),
+      columns: (auto, 1fr),
+      column-gutter: 2em,
       align: (left, right),
     )[
       #text(size: 3em, weight: "bold")[#firstname]\
@@ -86,7 +87,7 @@
 
     customBox(title: [About])[
       #grid(
-        columns: (1fr, 1fr)
+        columns: (auto, auto)
       )[
         Since beginning my web development journey in 2010, I have acquired a wealth
         of experience across diverse environments, including innovative start-ups
@@ -100,7 +101,7 @@
         I take great satisfaction in creating simple, natural, and efficient
         solutions that harmoniously balance aesthetics and functionality.
       ][
-        #box(inset: (left: 2em))[
+        #box()[
           #featureBar(title: "Linux/NixOS/FreeBSD", value: 95%)
           #featureBar(title: "Object Oriented Programming", value: 90%)
           #featureBar(title: "PHP/Python", value: 87%)
@@ -163,19 +164,6 @@
         through the migration process from ColdFusion to PHP. Additionally, I design and implement open-source authentication libraries
         solutions and the necessary development infrastructure for multiple teams, with
         a focus on creating reproducible and ephemeral development environments based on Nix.
-      ]
-
-      #jobEntry(
-        type: [#text(
-            size: font-defaults.footnotesize,
-            fill: black.lighten(75%),
-          )[Before 2019]],
-      )[
-        #{
-          set text(size: font-defaults.footnotesize, fill: black.lighten(75%))
-          [This is the public and short version of my CV. Please ask for the full
-            version by sending me an #link("mailto:pol.dellaiera@protonmail.com")[email].]
-        }
       ]
     ]
 
@@ -243,7 +231,7 @@
     ]
 
     grid(
-      columns: (1fr, 2fr, 1fr),
+      columns: (3fr, 8fr, 4fr),
       column-gutter: 1em,
     )[
       #customBox(title: [Languages])[
@@ -267,6 +255,7 @@
     ]
 
     customBox(title: [Favorite quotes])[
+      - Ex falso sequitur. - #link("https://en.wikipedia.org/wiki/Principle_of_explosion")[Wikipedia]
       - Simplicity is the ultimate sophistication. - Leonardo da Vinci
       - Only when the last tree has died and the last river been poisoned and the last fish been caught will we realize we cannot eat money. - Indian author
       - We may regard the present state of the universe as the effect of its past and the cause of its future. An intellect which at a certain moment would know all forces that set nature in motion, and all positions of all items of which nature is composed, if this intellect were also vast enough to submit these data to analysis, it would embrace in a single formula the movements of the greatest bodies of the universe and those of the tiniest atom; for such an intellect nothing would be uncertain and the future just like the past would be present before its eyes. - Pierre Simon Laplace

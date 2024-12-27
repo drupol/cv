@@ -122,7 +122,7 @@
   body,
   title: "",
 ) = {
-  grid(rows: 2, row-gutter: 0em)[
+  grid(rows: 2, row-gutter: 0.25em)[
     #{
       block(fill: black, inset: .3em)[
         #text(fill: white, size: font.large)[#upper(title)]
@@ -139,14 +139,12 @@
   value: 100%,
 ) = {
   {
-    block()[
-      #grid(
-        columns: (1fr, 1fr),
-        column-gutter: 1em,
-        align: horizon,
-        align(right)[#title],
-        line(stroke: .75em + blue.darken(30%), length: value),
-      )
-    ]
+    grid(
+      columns: (1fr, 1fr),
+      column-gutter: 1em,
+      align: horizon,
+      align(right)[#title],
+      line(stroke: .75em + blue.darken(30%), length: value),
+    )
   }
 }

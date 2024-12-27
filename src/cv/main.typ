@@ -3,6 +3,7 @@
 #set document(
   title: "Pol Dellaiera",
   author: "Pol Dellaiera",
+  date: none,
 )
 
 #show: resume.with(
