@@ -22,7 +22,7 @@
 
   // --- Links ---
   show link: it => {
-    underline(it, stroke: .2pt + rgb("#000000").lighten(65%))
+    underline(it, stroke: .2pt + rgb("#000000").lighten(80%))
   }
 
   // --- Page configuration ---
@@ -47,7 +47,8 @@
   {
     grid(
       columns: (auto, 1fr),
-      column-gutter: 2em,
+      rows: (2.3cm),
+      column-gutter: 1em,
       align: (left, right),
     )[
       #text(size: 3em, weight: "bold")[#firstname]\
@@ -57,7 +58,7 @@
       #{
         grid(
           columns: (1fr, 1fr, 1fr),
-          row-gutter: 2em,
+          rows: (1fr, auto),
           align: left
         )[
           #linkItem(
@@ -110,14 +111,14 @@
         functionality.
       ][
         #featureBar(title: "Linux / NixOS / FreeBSD", value: 95%)
+        #featureBar(title: [Reproducible processes], value: 92.5%)
         #featureBar(title: "Object Oriented Programming", value: 90%)
         #featureBar(title: "Continuous Integrations", value: 90%)
-        #featureBar(title: "Infrastructure As Code", value: 90%)
-        #featureBar(title: "PHP / Python", value: 87%)
+        #featureBar(title: [#emph[Everything] As Code], value: 90%)
         #featureBar(title: "Functional Programming", value: 85%)
         #featureBar(title: "Git / Jujutsu", value: 85%)
         #featureBar(title: "Algorithm", value: 85%)
-        #featureBar(title: "Docker", value: 75%)
+        #featureBar(title: "Nix / Docker", value: 80%)
         #featureBar(title: [Typst / #LaTeX], value: 70%)
         #featureBar(title: [Word / Excel / Powerpoint], value: 5%)
       ]
