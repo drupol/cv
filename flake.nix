@@ -33,33 +33,11 @@
           # Change here to typst-dev if needed
           typst = pkgs.nixpkgs-unstable.typst;
 
-          robotoFixed = pkgs.roboto.overrideAttrs (finalAttrs: {
-            nativeBuildInputs = [
-                pkgs.python3Packages.fonttools
-            ];
-
-            installPhase = ''
-              runHook preInstall
-
-              for file in RobotoCondensed*; do
-                fontname=$(echo $file | sed 's/\.ttf//')
-                ttx -v -o $fontname.xml $file
-                substituteInPlace $fontname.xml \
-                  --replace-fail "<usWidthClass value=\"5\"/>" "<usWidthClass value=\"3\"/>"
-                ttx $fontname.xml -o $fontname.ttf
-              done
-
-              install -Dm644 *.ttf -t $out/share/fonts/truetype
-
-              runHook postInstall
-            '';
-          });
-
           fontsConf = pkgs.symlinkJoin {
             name = "typst-fonts";
             paths = with pkgs; [
               font-awesome
-              robotoFixed
+              roboto
               newcomputermodern
             ];
           };
