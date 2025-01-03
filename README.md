@@ -1,7 +1,5 @@
 # Public CV
 
-Personnal public CV based on [DockLatex][http docklatex].
+Personal and short public CV.
 
-Find the latest version of my CV here: https://github.com/drupol/cv/releases/latest/download/cv.pdf
-
-[http docklatex]: https://github.com/loophp/DockLatex
+Find the latest version here: https://github.com/drupol/cv/releases/latest/download/cv.pdf
