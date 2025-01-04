@@ -152,8 +152,6 @@
           devShells.default = pkgs.mkShellNoCC {
             packages = (lib.attrValues scriptDrvs) ++ [
               typst
-              pkgs.gnuplot
-              pkgs.pympress
             ];
 
             shellHook = ''
@@ -165,6 +163,7 @@
 
             env = {
               TYPST_FONT_PATHS = fontsConf;
+              TYPST_PACKAGE_CACHE_PATH = "${config.packages.typst-packages}/typst/packages";
             };
           };
         };

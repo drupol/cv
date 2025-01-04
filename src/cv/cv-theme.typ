@@ -158,11 +158,11 @@
         type: "Full time",
         date: "07/2019 — 06/2024",
         tags: (
-          link("https://en.wikipedia.org/wiki/Nix_(package_manager)")[Nix],
           link("https://symfony.com/")[Symfony],
           link("https://www.doctrine-project.org/")[Doctrine],
           link("https://api-platform.com/")[API Platform],
           link("https://en.wikipedia.org/wiki/Oracle_Database")[Oracle],
+          link("https://en.wikipedia.org/wiki/Nix_(package_manager)")[Nix],
           link("https://en.wikipedia.org/wiki/Docker_(software)")[Docker],
           link("https://en.wikipedia.org/wiki/Infrastructure_as_code")[IAC],
         ),
@@ -173,6 +173,26 @@
         through the migration process from ColdFusion to PHP. Additionally, I design and implement open-source authentication libraries
         solutions and the necessary development infrastructure for multiple teams, with
         a focus on creating reproducible and ephemeral development environments based on Nix.
+      ]
+
+      #jobEntry(
+        title: "Software Engineer",
+        company: [#link("https://ec.europa.eu")[European Commission]],
+        location: "Bruxelles",
+        type: "Full time",
+        date: "06/2015 — 06/2019",
+        tags: (
+          link("https://en.wikipedia.org/wiki/PHP_(programming_language)")[PHP],
+          link("https://drupal.org")[Drupal],
+          link("https://en.wikipedia.org/wiki/Git")[Git],
+          link("https://en.wikipedia.org/wiki/Docker_(software)")[Docker],
+        ),
+      )[
+        Hired under the behalf of a consultancy company, working at DIGIT D.1 on
+        the Next Europa platform and OpenEuropa running respectively Drupal 7
+        and Drupal 8. My role was to design and implement features for the
+        internal web publishing platform, ensuring the best practices in terms
+        of security, performance, and scalability.
       ]
     ]
 
