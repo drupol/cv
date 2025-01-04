@@ -113,7 +113,7 @@
         #featureBar(title: "Linux / NixOS / FreeBSD", value: 95%)
         #featureBar(title: [Reproducible processes], value: 92.5%)
         #featureBar(title: "Object Oriented Programming", value: 90%)
-        #featureBar(title: "Continuous Integrations", value: 90%)
+        #featureBar(title: "CI/CD, Reporting, Security", value: 90%)
         #featureBar(title: [#emph[Everything] As Code], value: 90%)
         #featureBar(title: "Functional Programming", value: 85%)
         #featureBar(title: "Git / Jujutsu", value: 85%)
