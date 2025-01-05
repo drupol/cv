@@ -188,10 +188,11 @@
           link("https://en.wikipedia.org/wiki/Docker_(software)")[Docker],
         ),
       )[
-        Hired under the behalf of a consultancy company, working at DIGIT D.1 on
-        the Next Europa platform and OpenEuropa running respectively Drupal 7
-        and Drupal 8. My role was to design and implement features for the
-        internal web publishing platform, ensuring the best practices in terms
+        Hired on the behalf of a consultancy company, working at
+        #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.1] on
+        the Next Europa and OpenEuropa platforms, the open-source web publishing
+        platformsj running respectively Drupal 7 and Drupal 8. My role was to
+        design and implement features, ensuring the best practices in terms
         of security, performance, and scalability.
       ]
     ]
