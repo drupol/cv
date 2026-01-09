@@ -51,7 +51,7 @@ jobs:
                   cp -ar cv/* output/
 
             - name: Upload build assets
-              uses: actions/upload-artifact@v5
+              uses: actions/upload-artifact@v6
               with:
                   name: artefacts
                   path: output
