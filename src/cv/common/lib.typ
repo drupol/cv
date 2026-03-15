@@ -1,5 +1,5 @@
 #import "metadata.typ": *
-#import "@preview/fontawesome:0.5.0": *
+#import "@preview/fontawesome:0.6.0": *
 
 #let languageItem(
   lang: "",
@@ -89,7 +89,8 @@
         set text(fill: black.lighten(70%))
         grid(
           row-gutter: .5em,
-          type, location
+          type,
+          location,
         )
       },
       {

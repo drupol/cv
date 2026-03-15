@@ -2,7 +2,7 @@
 #let subtitle = "Research, analysis, development"
 #let body-font = "Roboto"
 #let sans-font = "New Computer Modern Sans"
-#let page-margin = (left: 5mm, right: 5mm, top: 5mm, bottom: 5mm,)
+#let page-margin = (left: 5mm, right: 5mm, top: 5mm, bottom: 5mm)
 #let rev = if "rev" in sys.inputs {
   sys.inputs.rev
 } else {
@@ -34,7 +34,7 @@
 )
 
 #let font = (
-  Large: font-defaults.Large + 0.4pt,  // Actual font size.
+  Large: font-defaults.Large + 0.4pt, // Actual font size.
   footnote: font-defaults.footnotesize,
   large: font-defaults.large,
   small: font-defaults.small,

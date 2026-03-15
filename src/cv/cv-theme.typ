@@ -1,4 +1,4 @@
-#import "@preview/fontawesome:0.5.0": *
+#import "@preview/fontawesome:0.6.0": *
 #import "common/metadata.typ": *
 #import "common/lib.typ": *
 
@@ -47,7 +47,7 @@
   {
     grid(
       columns: (auto, 1fr),
-      rows: (2.3cm),
+      rows: 2.3cm,
       column-gutter: 1em,
       align: (left, right),
     )[
@@ -63,7 +63,9 @@
         )[
           #linkItem(
             icon: "map-pin",
-          )[#link("https://www.openstreetmap.org//#map=15/50.59690/4.32280")[Nivelles, Belgium]]
+          )[#link(
+            "https://www.openstreetmap.org//#map=15/50.59690/4.32280",
+          )[Nivelles, Belgium]]
         ][
           #linkItem(
             icon: "github",
@@ -71,7 +73,9 @@
         ][
           #linkItem(
             icon: "envelope",
-          )[#link("mailto:pol.dellaiera@protonmail.com")[pol.dellaiera\@protonmail.com]]
+          )[#link(
+            "mailto:pol.dellaiera@protonmail.com",
+          )[pol.dellaiera\@protonmail.com]]
         ][
           #linkItem(
             icon: "globe",
@@ -110,15 +114,14 @@
         efficient solutions that harmoniously balance aesthetics and
         functionality.
       ][
-        #featureBar(title: "Linux / NixOS / FreeBSD", value: 95%)
-        #featureBar(title: [Reproducible processes], value: 92.5%)
-        #featureBar(title: "Object Oriented Programming", value: 90%)
-        #featureBar(title: "CI/CD, Reporting, Security", value: 90%)
-        #featureBar(title: [#emph[Everything] As Code], value: 90%)
-        #featureBar(title: "Functional Programming", value: 85%)
+        #featureBar(title: "Linux / FreeBSD", value: 97.5%)
+        #featureBar(title: [Reproducible processes], value: 95%)
+        #featureBar(title: "CI/CD, Reporting, Security", value: 92.5%)
+        #featureBar(title: [#emph[Everything As Code]], value: 90%)
+        #featureBar(title: "Containerisation", value: 90%)
+        #featureBar(title: "OOP / FP", value: 87.5%)
         #featureBar(title: "Git / Jujutsu", value: 85%)
-        #featureBar(title: "Algorithm", value: 85%)
-        #featureBar(title: "Nix / Docker", value: 80%)
+        #featureBar(title: "Algorithm", value: 80%)
         #featureBar(title: [Typst / #LaTeX], value: 70%)
         #featureBar(title: [Word / Excel / Powerpoint], value: 5%)
       ]
@@ -127,12 +130,45 @@
     customBox(title: [Experience])[
       #jobEntry(
         title: "Senior Application Architect",
-        company: [#link("https://ec.europa.eu")[European Commission]],
+        company: [#link("https://ec.europa.eu")[European Commission] / #link("https://commission.europa.eu/about/departments-and-executive-agencies/education-youth-sport-and-culture_en")[DG EAC R.4. (IT Projects and Support)]],
         location: "Bruxelles",
         type: "Full time",
-        date: "06/2024 — present",
+        date: "08/2025 — present",
         tags: (
-          link("https://en.wikipedia.org/wiki/Python_(programming_language)")[Python],
+          link(
+            "https://en.wikipedia.org/wiki/Python_(programming_language)",
+          )[Python],
+          link(
+            "https://en.wikipedia.org/wiki/Go_(programming_language)",
+          )[Go],
+          link(
+            "https://en.wikipedia.org/wiki/TypeScript",
+          )[Typescript],
+          link("https://en.wikipedia.org/wiki/Nix_(package_manager)")[Nix],
+          link("https://en.wikipedia.org/wiki/Infrastructure_as_code")[IAC],
+          link(
+            "https://en.wikipedia.org/wiki/GitLab",
+          )[Gitlab],
+        ),
+      )[
+        Hired on behalf of a consultancy company, contributing to the
+        modernisation of digital platforms supporting European programmes such
+        as Erasmus+ and the European Solidarity Corps. Focus areas include
+        software architecture, backend development, reusable platform
+        components, DevSecOps, CI/CD, automation, and reproducible delivery
+        practices.
+      ]
+
+      #jobEntry(
+        title: "Senior Application Architect",
+        company: [#link("https://ec.europa.eu")[European Commission] / #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.4 (#emph[Software Engineering Capabilities])]],
+        location: "Bruxelles",
+        type: "Full time",
+        date: "06/2024 — 07/2025",
+        tags: (
+          link(
+            "https://en.wikipedia.org/wiki/Python_(programming_language)",
+          )[Python],
           link("https://en.wikipedia.org/wiki/MongoDB")[MongoDB],
           link("https://platform.openai.com")[OpenAI API],
           link("https://en.wikipedia.org/wiki/Large_language_model")[LLM],
@@ -142,18 +178,17 @@
           link("https://en.wikipedia.org/wiki/Infrastructure_as_code")[IAC],
         ),
       )[
-        Hired on behalf of a consultancy company, working at
-        #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.4] (#emph[Software Engineering Capabilities]).
-        In this role, I am part of a team of developers, responsible for
-        developing #emph[GPT\@EC], an internal AI chatbot application based on
-        GPT technology, using open-source software. My primary focus is on designing and building a
+        Hired on behalf of a consultancy company. In this role, I am part of a
+        team of developers, responsible for developing #emph[GPT\@EC], an
+        internal AI chatbot application based on GPT technology, using
+        open-source software. My primary focus is on designing and building a
         scalable, robust solution, ensuring optimal performance, security, and
         integration within the European Commission's ecosystem.
       ]
 
       #jobEntry(
         title: "Application Architect",
-        company: [#link("https://ec.europa.eu")[European Commission]],
+        company: [#link("https://ec.europa.eu")[European Commission] / #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.4 (#emph[Software Engineering Capabilities])]],
         location: "Bruxelles",
         type: "Full time",
         date: "07/2019 — 06/2024",
@@ -167,17 +202,18 @@
           link("https://en.wikipedia.org/wiki/Infrastructure_as_code")[IAC],
         ),
       )[
-        Hired on behalf of a consultancy company, working at
-        #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.4] (#emph[Software Engineering Capabilities]),
-        where I work in the Developer's Journey team. In this role, I guide teams and clients
-        through the migration process from ColdFusion to PHP. Additionally, I design and implement open-source authentication libraries
-        solutions and the necessary development infrastructure for multiple teams, with
-        a focus on creating reproducible and ephemeral development environments based on Nix.
+        Hired on behalf of a consultancy company, where I work in the
+        Developer's Journey team. In this role, I guide teams and clients
+        through the migration process from ColdFusion to PHP. Additionally, I
+        design and implement open-source authentication libraries
+        solutions and the necessary development infrastructure for multiple
+        teams, with a focus on creating reproducible and ephemeral development
+        environments based on Nix.
       ]
 
       #jobEntry(
         title: "Software Engineer",
-        company: [#link("https://ec.europa.eu")[European Commission]],
+        company: [#link("https://ec.europa.eu")[European Commission] / #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.1]],
         location: "Bruxelles",
         type: "Full time",
         date: "06/2015 — 06/2019",
@@ -188,8 +224,7 @@
           link("https://en.wikipedia.org/wiki/Docker_(software)")[Docker],
         ),
       )[
-        Hired on the behalf of a consultancy company, working at
-        #link("https://ec.europa.eu/info/departments/informatics_en")[Digit B.1] on
+        Hired on the behalf of a consultancy company, working on
         the Next Europa and OpenEuropa platforms, the open-source web publishing
         platformsj running respectively Drupal 7 and Drupal 8. My role was to
         design and implement features, ensuring the best practices in terms
@@ -224,7 +259,9 @@
 
         #educationEntry(
           title: "Music theory / Piano",
-          school: [#link("https://academiedenivelles.be")[Académie de Nivelles]],
+          school: [#link(
+            "https://academiedenivelles.be",
+          )[Académie de Nivelles]],
           type: "Full time",
           date: "2018 — 2021",
         )[]
@@ -233,13 +270,18 @@
       #customBox(title: [Certificates])[
         #educationEntry(
           title: "Intelligence Artificielle (Hands on AI)",
-          school: [#link("https://web.umons.ac.be/fpms/fr/formations/cu-inarti/")[University of Mons]],
+          grade: [Magna cum laude],
+          school: [#link(
+            "https://web.umons.ac.be/fpms/fr/formations/cu-inarti/",
+          )[University of Mons]],
           date: "09/2024",
         )[]
 
         #educationEntry(
           title: "Blockchain: Understanding Its Uses and Implications",
-          school: [#link("https://courses.edx.org/certificates/01fdb9d9242546e8bc45153468dfd785")[The Linux Foundation]],
+          school: [#link(
+            "https://courses.edx.org/certificates/01fdb9d9242546e8bc45153468dfd785",
+          )[The Linux Foundation]],
           type: "Full time",
           date: "01/2020",
         )[]
@@ -283,6 +325,8 @@
         I am also an OpenStreetMap user and contributor.
       ]
     ]
+
+    set text(size: .75em)
 
     customBox(title: [Favorite quotes])[
       - Ex falso quodlibet. - #link("https://en.wikipedia.org/wiki/Principle_of_explosion")[Wikipedia]
