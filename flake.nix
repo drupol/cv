@@ -1,171 +1,25 @@
 {
+  # Define the inputs for the flake.
   inputs = {
+    # Provides the large `nixpkgs` package set.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # flake-parts helps structure the flake outputs.
     flake-parts.url = "github:hercules-ci/flake-parts";
-    systems.url = "github:nix-systems/default";
-    typst-dev.url = "github:typst/typst";
-    typst-packages = {
+    # import-tree helps to import all Nix files from a directory.
+    import-tree.url = "github:vic/import-tree";
+    # make-shell provides utilities to create development shells more declaratively.
+    make-shell.url = "github:nicknovitski/make-shell";
+    # treefmt-nix provides formatting for all the project files.
+    treefmt-nix.url = "github:numtide/treefmt-nix";
+    # Make it compatible with legacy nix commands
+    flake-compat = {
+      url = "github:NixOS/flake-compat";
       flake = false;
-      url = "github:typst/packages";
     };
-    pkgs-by-name-for-flake-parts.url = "github:drupol/pkgs-by-name-for-flake-parts";
   };
 
+  # The outputs function defines what this flake provides.
+  # Its sole parameter is `inputs`, which contains the resolved inputs.
   outputs =
-    inputs@{ ... }:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = import inputs.systems;
-
-      imports = [
-        ./nix/imports/pkgs.nix
-        inputs.pkgs-by-name-for-flake-parts.flakeModule
-      ];
-
-      perSystem =
-        {
-          pkgs,
-          lib,
-          config,
-          ...
-        }:
-        let
-          # Change here to typst-dev if needed
-          typst = pkgs.nixpkgs-unstable.typst;
-
-          fontsConf = pkgs.symlinkJoin {
-            name = "typst-fonts";
-            paths = with pkgs; [
-              font-awesome
-              roboto
-              newcomputermodern
-            ];
-          };
-
-          mkBuildDocumentDrv =
-            documentName:
-            pkgs.stdenvNoCC.mkDerivation {
-              name = "build-" + documentName;
-
-              src = pkgs.lib.cleanSource ./.;
-
-              nativeBuildInputs = [
-                typst
-              ];
-
-              buildPhase = ''
-                runHook preBuild
-
-                ${lib.getExe typst} fonts --variants --ignore-system-fonts --font-path ${fontsConf}
-
-                ${lib.getExe typst} \
-                  compile \
-                  --root ./. \
-                  --input rev="${inputs.self.rev or ""}" \
-                  --input shortRev="${inputs.self.shortRev or ""}" \
-                  --input builddate="$(date -u -d @${toString (inputs.self.lastModified or "")})" \
-                  --package-path ${inputs.typst-packages}/packages \
-                  --font-path ${fontsConf} \
-                  --ignore-system-fonts \
-                  ./src/${documentName}/main.typ \
-                  ${documentName}.pdf
-
-                runHook postBuild
-              '';
-
-              installPhase = ''
-                runHook preInstall
-
-                install -m640 -D ${documentName}.* -t $out
-
-                runHook postInstall
-              '';
-            };
-
-          mkBuildDocumentScript =
-            documentName:
-            pkgs.writeShellApplication {
-              name = "build-${documentName}";
-
-              runtimeInputs = [ typst ];
-
-              text = ''
-                ${lib.getExe typst} fonts --ignore-system-fonts --font-path ${fontsConf}
-
-                ${lib.getExe typst} \
-                  compile \
-                  --root ./. \
-                  --input rev="${inputs.self.rev or ""}" \
-                  --input shortRev="${inputs.self.shortRev or ""}" \
-                  --input builddate="$(date -u -d @${toString (inputs.self.lastModified or "")})" \
-                  --package-path ${inputs.typst-packages}/packages \
-                  --font-path ${fontsConf} \
-                  --ignore-system-fonts \
-                  ./src/${documentName}/main.typ \
-                  ${documentName}.pdf
-              '';
-            };
-
-          mkWatchDocumentScript =
-            documentName:
-            pkgs.writeShellApplication {
-              name = "watch-${documentName}";
-
-              runtimeInputs = [ typst ];
-
-              text = ''
-                ${lib.getExe typst} \
-                  watch \
-                  --root ./. \
-                  --input rev="${inputs.self.rev or ""}" \
-                  --input shortRev="${inputs.self.shortRev or ""}" \
-                  --input builddate="$(date -u -d @${toString (inputs.self.lastModified or "")})" \
-                  --package-path ${inputs.typst-packages}/packages \
-                  --font-path ${fontsConf} \
-                  --ignore-system-fonts \
-                  ./src/${documentName}/main.typ \
-                  ${documentName}.pdf
-              '';
-            };
-
-          documentDrvs = lib.genAttrs (lib.attrNames (
-            lib.filterAttrs (k: v: (v == "directory")) (builtins.readDir ./src)
-          )) (d: mkBuildDocumentDrv d);
-
-          scriptDrvs =
-            {
-              "sign-pdf" = config.packages.sign-pdf;
-            }
-            // lib.foldl' (
-              a: i:
-              a
-              // {
-                "build-${i}" = mkBuildDocumentScript i;
-                "watch-${i}" = mkWatchDocumentScript i;
-              }
-            ) { } (lib.attrNames documentDrvs);
-        in
-        {
-          pkgsDirectory = ./nix/pkgs;
-          packages = documentDrvs;
-
-          devShells.default = pkgs.mkShellNoCC {
-            packages = (lib.attrValues scriptDrvs) ++ [
-              typst
-            ];
-
-            shellHook = ''
-              echo "Typst version: ${typst.version}"
-              echo "Typst bin: ${lib.getExe typst}"
-              echo "Typst packages directory: ${config.packages.typst-packages}"
-              echo "Typst fonts directory: ${fontsConf}"
-            '';
-
-            env = {
-              TYPST_FONT_PATHS = fontsConf;
-              TYPST_PACKAGE_CACHE_PATH = "${config.packages.typst-packages}/typst/packages";
-            };
-          };
-        };
-    };
+    inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./nix/modules);
 }
