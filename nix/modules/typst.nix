@@ -52,7 +52,7 @@
               --root ${root} \
               --input rev="${inputs.self.rev or "$GIT_SHORT_COMMIT_ID_RAW"}" \
               --input shortRev="${inputs.self.shortRev or "$GIT_SHORT_COMMIT_ID_RAW"}" \
-              --input builddate="$(date -u -d @${toString (inputs.self.lastModified or "")})" \
+              --input builddate="$(date -u)" \
               --font-path ${typst-fonts} \
               --ignore-system-fonts \
               ${documentPath}/main.typ \

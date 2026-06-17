@@ -269,8 +269,17 @@
     ][
       #customBox(title: [Certificates])[
         #educationEntry(
+          title: "Learn to Code with Rust",
+          grade: [],
+          school: [#link(
+            "https://www.udemy.com/certificate/UC-537ffe94-2980-40ae-b513-191267fd31ff",
+          )[Udemy]],
+          date: "02/2026",
+        )[]
+
+        #educationEntry(
           title: "Intelligence Artificielle (Hands on AI)",
-          grade: [Magna cum laude],
+          grade: [],
           school: [#link(
             "https://web.umons.ac.be/fpms/fr/formations/cu-inarti/",
           )[University of Mons]],
@@ -287,15 +296,8 @@
         )[]
 
         #educationEntry(
-          title: "Acquia Certified Developer",
-          school: [#link("https://certification.acquia.com/user/249")[Acquia]],
-          type: "Full time",
-          date: "09/2015",
-        )[]
-
-        #educationEntry(
-          title: "Acquia Certified Back End Specialist",
-          school: [#link("https://certification.acquia.com/user/249")[Acquia]],
+          title: "Acquia Certified Developer and Back-end Specialist",
+          school: [#link("https://certification.acquia.com/person/certified/pol-dellaiera")[Acquia]],
           type: "Full time",
           date: "09/2015",
         )[]
@@ -315,8 +317,7 @@
     ][
       #customBox(title: [Hobbies])[
         I am fulfilling a childhood dream, I study music and teach myself piano.
-        I love photography and I learned by myself most of the secrets of a reflex camera, just for fun.
-        I swim a lot and I also really like riding my mountain bike. Another hobby of mine is refurbishing old computers, giving them a second life and use them for making experiments in my basement.
+        I love photography and I learned by myself most of the secrets of a reflex camera, just for fun. I also enjoy experimenting with off-grid networks using LoRa devices. I swim a lot and I also really like riding my mountain bike. Another hobby of mine is refurbishing old computers, giving them a second life and use them for making experiments in my basement.
       ]
     ][
       #customBox(title: [Non Profit])[
@@ -332,7 +333,7 @@
       - Ex falso quodlibet. - #link("https://en.wikipedia.org/wiki/Principle_of_explosion")[Wikipedia]
       - Simplicity is the ultimate sophistication. - Leonardo da Vinci
       - Only when the last tree has died and the last river been poisoned and the last fish been caught will we realize we cannot eat money. - Indian author
-      - We may regard the present state of the universe as the effect of its past and the cause of its future. An intellect which at a certain moment would know all forces that set nature in motion, and all positions of all items of which nature is composed, if this intellect were also vast enough to submit these data to analysis, it would embrace in a single formula the movements of the greatest bodies of the universe and those of the tiniest atom; for such an intellect nothing would be uncertain and the future just like the past would be present before its eyes. - Pierre Simon Laplace
+    //   - We may regard the present state of the universe as the effect of its past and the cause of its future. An intellect which at a certain moment would know all forces that set nature in motion, and all positions of all items of which nature is composed, if this intellect were also vast enough to submit these data to analysis, it would embrace in a single formula the movements of the greatest bodies of the universe and those of the tiniest atom; for such an intellect nothing would be uncertain and the future just like the past would be present before its eyes. - Pierre Simon Laplace
     ]
   }
 }
